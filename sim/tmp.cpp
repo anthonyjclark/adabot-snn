@@ -1,8 +1,8 @@
 
 
-#ifdef VISUALIZE
-    #include "../../logger/cpp/logger.hpp"
-#endif
+// #ifdef VISUALIZE
+//     #include "../../logger/cpp/logger.hpp"
+// #endif
 
 #include "extras/pd_controller.hpp"
 #include "extras/utilities.hpp"
@@ -21,8 +21,8 @@
 // using std::cerr;
 // using std::endl;
 
-using std::string;
-using std::vector;
+// using std::string;
+// using std::vector;
 
 using std::min;
 using std::max;
@@ -202,32 +202,32 @@ using std::max;
 // }
 
 
-#ifdef VISUALIZE
-    void add_frame_to_rl(revisit::logger & logger, WorldPtr & world, double scale) {
+// #ifdef VISUALIZE
+//     void add_frame_to_rl(revisit::logger & logger, WorldPtr & world, double scale) {
 
-        logger.new_frame();
+//         logger.new_frame();
 
-        for (size_t skel_idx = 0; skel_idx < world->getNumSkeletons(); ++skel_idx) {
+//         for (size_t skel_idx = 0; skel_idx < world->getNumSkeletons(); ++skel_idx) {
 
-            auto skel = world->getSkeleton(skel_idx);
-            for (const auto & bnode : skel->getBodyNodes()) {
+//             auto skel = world->getSkeleton(skel_idx);
+//             for (const auto & bnode : skel->getBodyNodes()) {
 
-                auto T = bnode->getTransform();
-                auto trans = T.translation() * scale;
-                Quaterniond quat(T.rotation());
+//                 auto T = bnode->getTransform();
+//                 auto trans = T.translation() * scale;
+//                 Quaterniond quat(T.rotation());
 
-                logger.add_to_frame(
-                    bnode->getName(),
-                    trans.x(), trans.y(), trans.z(),
-                    quat.x(), quat.y(), quat.z(), quat.w());
-            }
-        }
-    }
-#endif
+//                 logger.add_to_frame(
+//                     bnode->getName(),
+//                     trans.x(), trans.y(), trans.z(),
+//                     quat.x(), quat.y(), quat.z(), quat.w());
+//             }
+//         }
+//     }
+// #endif
 
 
-int main(int argc, char const *argv[])
-{
+// int main(int argc, char const *argv[])
+// {
     // // General parameters
     // constexpr double material_density = 700_kg_per_m3;
     // constexpr double material_restitution = 0.75;
@@ -239,12 +239,12 @@ int main(int argc, char const *argv[])
     //
 
 
-    if (argc < 2) {
-        cerr << "Not enough program arguments." << endl;
-        return 1;
-    }
+    // if (argc < 2) {
+    //     cerr << "Not enough program arguments." << endl;
+    //     return 1;
+    // }
 
-    std::istringstream iss(argv[1]);
+    // std::istringstream iss(argv[1]);
 
 //     // Simulation parameters
 //     double TIME_STOP;
@@ -298,18 +298,18 @@ int main(int argc, char const *argv[])
     // constexpr double weg_radius = 0.25_cm;
 
 
-#ifdef VISUALIZE
+// #ifdef VISUALIZE
 
-    constexpr double VIS_STEP = 1.0 / 10.0;
-    constexpr double VIS_SCALE = 10;
+//     constexpr double VIS_STEP = 1.0 / 10.0;
+//     constexpr double VIS_SCALE = 10;
 
 
-    //
-    // Create the visualization logger
-    //
+//     //
+//     // Create the visualization logger
+//     //
 
-    revisit::logger rl(VIS_STEP, TIME_STOP);
-#endif
+//     revisit::logger rl(VIS_STEP, TIME_STOP);
+// #endif
 
 
     // //
@@ -671,4 +671,4 @@ int main(int argc, char const *argv[])
 #endif
 
     return EXIT_SUCCESS;
-}
+// }

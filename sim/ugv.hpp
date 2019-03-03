@@ -2,6 +2,10 @@
 #ifndef UGV_HPP
 #define UGV_HPP
 
+#ifdef VISUALIZE
+#include "../logger-cpp/src/logger.hpp"
+#endif
+
 #include <string>
 using std::string;
 
@@ -30,43 +34,81 @@ public:
   const double material_restitution = 0.75;
   const double gravity = -9.80665;
 
+#ifdef VISUALIZE
+  // Visualization parameters
+  const double vis_step = 1.0 / 10.0;
+  const double vis_scale = 10;
+  review::logger rl(vis_step, time_stop);
+#endif
+
   WorldPtr world;
   SkeletonPtr ground;
   SkeletonPtr ugv;
 
   double wheel_base;
   double track_width;
-  double chassis_height; // 3cm
+  double chassis_height;
   double wheel_radius;
-  double wheel_thickness; // 1.5cm
+  double wheel_thickness;
   double weg_count;
-  double weg_radius; // 0.25cm
+  double weg_radius;
 
 private:
+#ifdef VISUALIZE
+  void add_frame_to_rl(revisit::logger& logger,
+                       WorldPtr& world,
+                       double scale = 10)
+  {
+
+    logger.new_frame();
+
+    for (size_t skel_idx = 0; skel_idx < world->getNumSkeletons(); ++skel_idx) {
+
+      auto skel = world->getSkeleton(skel_idx);
+      for (const auto& bnode : skel->getBodyNodes()) {
+
+        auto T = bnode->getTransform();
+        auto trans = T.translation() * scale;
+        Quaterniond quat(T.rotation());
+
+        logger.add_to_frame(bnode->getName(),
+                            trans.x(),
+                            trans.y(),
+                            trans.z(),
+                            quat.x(),
+                            quat.y(),
+                            quat.z(),
+                            quat.w());
+      }
+    }
+  }
+#endif
+
   auto create_chassis()
   {
     const string name{ "chassis" };
 
+    // Create chassis shape
     ShapePtr shape{ new BoxShape(
       Vector3d{ wheel_base, chassis_height, track_width }) };
     const double mass = material_density * shape->getVolume();
 
-    // Setup the joint properties
+    // Attach chassis to the world with a free joint
     FreeJoint::Properties joint_prop;
     joint_prop.mName = name + "_joint";
 
-    // Setup the body properties
+    // Set chassis dynamic properties
     BodyNode::Properties body_prop;
     body_prop.mName = name;
     body_prop.mRestitutionCoeff = material_restitution;
     body_prop.mInertia.setMass(mass);
     body_prop.mInertia.setMoment(shape->computeInertia(mass));
 
-    // Create the joint-node pair
+    // Create the chassis and add to ugv skeleton
     auto body_joint_pair = ugv->createJointAndBodyNodePair<FreeJoint>(
       nullptr, joint_prop, body_prop);
 
-    // Set the shape of the body
+    // Set chassis as collidable and dynamic
     body_joint_pair.second
       ->createShapeNodeWith<CollisionAspect, DynamicsAspect>(shape);
 

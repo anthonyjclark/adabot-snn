@@ -1,0 +1,3 @@
+[submodule "logger-cpp"]
+	path = logger-cpp
+	url = git://github.com/review/logger-cpp.git

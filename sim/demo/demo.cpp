@@ -4,13 +4,24 @@ using std::cerr;
 using std::cout;
 using std::endl;
 
+#include <sstream>
+using std::istringstream;
+
 #include "../ugv.hpp"
 
-int main(/*int argc, char const *argv[]*/)
+int
+main(int argc, char const* argv[])
 {
   constexpr double TIME_STEP = 0.005;
   constexpr double TIME_STOP = 1.0;
   constexpr double PRINT_STEP = 0.01;
+
+  if (argc < 2) {
+    cerr << "Not enough program arguments." << endl;
+    return 1;
+  }
+
+  istringstream iss(argv[1]);
 
   double wheel_base = 12_cm;
   double track_width = 20_cm;
@@ -30,7 +41,7 @@ int main(/*int argc, char const *argv[]*/)
 
   adabot.world->setTimeStep(TIME_STEP);
 
-  std::cout << "t x y z\n";
+  std::cout << "time,x,y,z\n";
 
   double print_time = 0;
 
@@ -41,9 +52,8 @@ int main(/*int argc, char const *argv[]*/)
     auto chassis_translation = chassis_transform.translation();
 
     if (adabot.world->getTime() >= print_time) {
-      std::cout << adabot.world->getTime() << " "
-                << chassis_translation.x() << " "
-                << chassis_translation.y() << " "
+      std::cout << adabot.world->getTime() << "," << chassis_translation.x()
+                << "," << chassis_translation.y() << ","
                 << chassis_translation.z() << "\n";
 
       print_time += PRINT_STEP;
