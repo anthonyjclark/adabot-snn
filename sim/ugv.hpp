@@ -3,7 +3,7 @@
 #define UGV_HPP
 
 #ifdef VISUALIZE
-#include "../logger-cpp/src/logger.hpp"
+  #include "../logger-cpp/src/logger.hpp"
 #endif
 
 #include <string>
@@ -38,7 +38,7 @@ public:
   // Visualization parameters
   const double vis_step = 1.0 / 10.0;
   const double vis_scale = 10;
-  review::logger rl(vis_step, time_stop);
+  review::logger rl{vis_step, time_stop};
 #endif
 
   WorldPtr world;
@@ -55,7 +55,7 @@ public:
 
 private:
 #ifdef VISUALIZE
-  void add_frame_to_rl(revisit::logger& logger,
+  void add_frame_to_rl(review::logger& logger,
                        WorldPtr& world,
                        double scale = 10)
   {
