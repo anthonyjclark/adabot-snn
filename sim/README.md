@@ -1,4 +1,12 @@
 
+Change friction
+see how it affects SNN vs diff drive model
+
+Change frequency of data output
+
+Inject noise into control signals
+
+
 # Building
 
 ```
@@ -12,6 +20,16 @@ cd sim
 
 ```
 clang-format -i -style=Mozilla <file>
+```
+
+# Running
+
+```
+# Without visualization
+./bin/fsm 5 5 12 1.1 0.4 0.8 2> fsm/fsm_data.csv
+
+# With visualization
+./bin/vis_fsm 5 5 12 1.1 0.4 0.8 1> fsm/fsm_vis.json 2> fsm/fsm_data.csv
 ```
 
 # Plotting
@@ -45,3 +63,9 @@ git push origin master
 cd logger-cpp
 git pull
 ```
+
+# SNN
+
+Inputs: control signals (left wheel and right wheel), strut extension
+
+Outputs: delta position

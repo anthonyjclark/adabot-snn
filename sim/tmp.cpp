@@ -4,8 +4,8 @@
 //     #include "../../logger/cpp/logger.hpp"
 // #endif
 
-#include "extras/pd_controller.hpp"
-#include "extras/utilities.hpp"
+// #include "extras/pd_controller.hpp"
+// #include "extras/utilities.hpp"
 
 
 // #include <dart/dart.hpp>
@@ -329,12 +329,12 @@ using std::max;
     //     chassis_dimensions, material_density, material_restitution);
 
 
-#ifdef VISUALIZE
-    rl.add_box(chassis_name,
-        chassis_dimensions.x() * VIS_SCALE,
-        chassis_dimensions.y() * VIS_SCALE,
-        chassis_dimensions.z() * VIS_SCALE);
-#endif
+// #ifdef VISUALIZE
+//     rl.add_box(chassis_name,
+//         chassis_dimensions.x() * VIS_SCALE,
+//         chassis_dimensions.y() * VIS_SCALE,
+//         chassis_dimensions.z() * VIS_SCALE);
+// #endif
 
 
     // //
@@ -356,51 +356,51 @@ using std::max;
     // vector<string> wheel_names{
     //     "front-right-wheel", "front-left-wheel", "back-right-wheel", "back-left-wheel"
     // };
-    vector<string> weg_joint_names;
-    vector<long> wheel_idxs;
-    vector<long> weg_idxs;
+    // vector<string> weg_joint_names;
+    // vector<long> wheel_idxs;
+    // vector<long> weg_idxs;
 
-    for (const auto & name : wheel_names) {
+    // for (const auto & name : wheel_names) {
         // wheel_props.name = name;
         // add_wheel(ugv, wheel_props);
-        wheel_idxs.push_back(ugv->getDof(name + "_joint")->getIndexInSkeleton());
+        // wheel_idxs.push_back(ugv->getDof(name + "_joint")->getIndexInSkeleton());
 
-#ifdef VISUALIZE
-        rl.add_ellipsoid(name,
-            wheel_dimensions.x() * VIS_SCALE,
-            wheel_dimensions.y() * VIS_SCALE,
-            wheel_dimensions.z() * VIS_SCALE);
-#endif
+// #ifdef VISUALIZE
+//         rl.add_ellipsoid(name,
+//             wheel_dimensions.x() * VIS_SCALE,
+//             wheel_dimensions.y() * VIS_SCALE,
+//             wheel_dimensions.z() * VIS_SCALE);
+// #endif
 
-        for (size_t weg_idx = 0; weg_idx < weg_count; ++weg_idx) {
-            auto weg_name = name + "_weg_joint" + std::to_string(weg_idx);
-            weg_idxs.push_back(ugv->getDof(weg_name)->getIndexInSkeleton());
-            weg_joint_names.push_back(weg_name);
+        // for (size_t weg_idx = 0; weg_idx < weg_count; ++weg_idx) {
+        //     auto weg_name = name + "_weg_joint" + std::to_string(weg_idx);
+            // weg_idxs.push_back(ugv->getDof(weg_name)->getIndexInSkeleton());
+            // weg_joint_names.push_back(weg_name);
 
-#ifdef VISUALIZE
-            rl.add_sphere(name + "_weg" + std::to_string(weg_idx), weg_radius * VIS_SCALE);
-#endif
-        }
-    }
+// #ifdef VISUALIZE
+//             rl.add_sphere(name + "_weg" + std::to_string(weg_idx), weg_radius * VIS_SCALE);
+// #endif
+    //     }
+    // }
 
 
-    //
-    // Create a ground plane
-    //
+    // //
+    // // Create a ground plane
+    // //
 
-    auto ground_depth = 1.0;
+    // auto ground_depth = 1.0;
 
-    auto ground = Skeleton::create("ground");
-    auto ground_body = ground->createJointAndBodyNodePair<WeldJoint>().second;
-    ground_body->setRestitutionCoeff(material_restitution);
-    ground_body->setName("ground");
-    ShapePtr ground_box(new BoxShape(Vector3d(100, ground_depth, 100)));
-    ground_body->createShapeNodeWith<CollisionAspect, DynamicsAspect>(ground_box);
+    // auto ground = Skeleton::create("ground");
+    // auto ground_body = ground->createJointAndBodyNodePair<WeldJoint>().second;
+    // ground_body->setRestitutionCoeff(material_restitution);
+    // ground_body->setName("ground");
+    // ShapePtr ground_box(new BoxShape(Vector3d(100, ground_depth, 100)));
+    // ground_body->createShapeNodeWith<CollisionAspect, DynamicsAspect>(ground_box);
 
-    // Shift the ground so that its top is at y=0
-    Isometry3d ground_tf(Isometry3d::Identity());
-    ground_tf.translate(Vector3d(0.0, -ground_depth / 2.0, 0.0));
-    ground_body->getParentJoint()->setTransformFromParentBodyNode(ground_tf);
+    // // Shift the ground so that its top is at y=0
+    // Isometry3d ground_tf(Isometry3d::Identity());
+    // ground_tf.translate(Vector3d(0.0, -ground_depth / 2.0, 0.0));
+    // ground_body->getParentJoint()->setTransformFromParentBodyNode(ground_tf);
 
 
     //
@@ -474,11 +474,11 @@ using std::max;
     // Controllers
     //
 
-    // 730 RPM --> 76.44542115 rad/s
-    constexpr double MAX_ABS_RADS = 20;
+    // // 730 RPM --> 76.44542115 rad/s
+    // constexpr double MAX_ABS_RADS = 20;
 
-    // The PD controller can be reused by all wegs
-    PDController weg_pd{1, 0.1, TIME_STEP};
+    // // The PD controller can be reused by all wegs
+    // PDController weg_pd{1, 0.1, TIME_STEP};
 
 
     //
@@ -487,71 +487,71 @@ using std::max;
 
     // world->setTimeStep(TIME_STEP);
 
-    double next_control_update_time = 0;
-    constexpr double CONTROL_STEP = 0.1;
+    // double next_control_update_time = 0;
+    // constexpr double CONTROL_STEP = 0.1;
 
 
-#ifdef VISUALIZE
-    double next_vis_output_time = 0;
-    rl.add_sphere("target", 5_cm * VIS_SCALE);
-#endif
+// #ifdef VISUALIZE
+//     double next_vis_output_time = 0;
+//     rl.add_sphere("target", 5_cm * VIS_SCALE);
+// #endif
 
-    vector<Vector3d> targets{
-        {-200_cm, 0,  200_cm},
-        { 200_cm, 0,  200_cm},
-        {-200_cm, 0, -200_cm},
-        { 200_cm, 0, -200_cm},
-    };
+    // vector<Vector3d> targets{
+    //     {-200_cm, 0,  200_cm},
+    //     { 200_cm, 0,  200_cm},
+    //     {-200_cm, 0, -200_cm},
+    //     { 200_cm, 0, -200_cm},
+    // };
 
-    size_t target_idx = 0;
-    double target_dist = 0.0;
-#ifdef VISUALIZE
-    bool update_target = true;
-#endif
+//     size_t target_idx = 0;
+//     double target_dist = 0.0;
+// #ifdef VISUALIZE
+//     bool update_target = true;
+// #endif
 
-    double left_speed = 0;
-    double right_speed = 0;
-    double weg_extension = 0;
+    // double left_speed = 0;
+    // double right_speed = 0;
+    // double weg_extension = 0;
 
     double angular_speed_error = 0;
     double linear_speed_error = 0;
     double alpha = 0.25;
 
-#ifdef VISUALIZE
-    cout << "time angle_scaled angular_speed_error_scaled linear_speed_error_scaled"
-            " left_speed right_speed weg_extension target_idx x y z angle_norm\n";
-#endif
+// #ifdef VISUALIZE
+    // cout << "time angle_scaled angular_speed_error_scaled linear_speed_error_scaled"
+    //         " left_speed right_speed weg_extension target_idx x y z angle_norm\n";
+// #endif
 
     // while (world->getTime() < TIME_STOP + TIME_STEP/2.0) {
 
     //     world->step();
 
-        if (world->getTime() >= next_control_update_time) {
-            next_control_update_time += CONTROL_STEP;
+        // if (world->getTime() >= next_control_update_time) {
+        //     next_control_update_time += CONTROL_STEP;
 
-            auto chassis_transform = ugv->getBodyNode(chassis_name)->getTransform();
+            // auto chassis_transform = ugv->getBodyNode(chassis_name)->getTransform();
 
-            auto chassis_yaw = chassis_transform.rotation().eulerAngles(2, 0, 2).y();
-            auto chassis_pos = chassis_transform.translation();
+            // auto chassis_yaw = chassis_transform.rotation().eulerAngles(2, 0, 2).y();
+            // auto chassis_pos = chassis_transform.translation();
 
-            auto local_to_global = AngleAxisd(chassis_yaw, Vector3d(0, 1, 0));
+            // auto local_to_global = AngleAxisd(chassis_yaw, Vector3d(0, 1, 0));
 
-            auto Va = local_to_global * Vector3d(1, 0, 0);
-            auto Vb = targets[target_idx] - chassis_pos;
-            auto Vn = Vector3d(0, 1, 0);
+            // auto Va = local_to_global * Vector3d(1, 0, 0);
+            // auto Vb = targets[target_idx] - chassis_pos;
+            // auto Vn = Vector3d(0, 1, 0);
 
-            auto angle = std::atan2(Va.cross(Vb).dot(Vn), Va.dot(Vb));
+            // auto angle = std::atan2(Va.cross(Vb).dot(Vn), Va.dot(Vb));
 
-            target_dist = (chassis_pos - targets[target_idx]).norm();
+            // target_dist = (chassis_pos - targets[target_idx]).norm();
 
-            if (target_dist < 8_cm) {
-#ifdef VISUALIZE
-                update_target = true;
-#endif
-                if (++target_idx >= targets.size()) {
-                    break;
-                }
-            }
+//             if (target_dist < 8_cm) {
+// #ifdef VISUALIZE
+//                 update_target = true;
+// #endif
+//                 if (++target_idx >= targets.size()) {
+//                     break;
+//                 }
+//             }
 
             double linear_speed = ugv->getBodyNode(chassis_name)->getLinearVelocity().norm();
             double angular_speed = ugv->getBodyNode(chassis_name)->getAngularVelocity().y();
@@ -618,48 +618,52 @@ using std::max;
 #endif
         }
 
-        ugv->setCommand(wheel_idxs.at(0), right_speed);
-        ugv->setCommand(wheel_idxs.at(1), left_speed);
-        ugv->setCommand(wheel_idxs.at(2), right_speed);
-        ugv->setCommand(wheel_idxs.at(3), left_speed);
+        // ugv->setCommand(wheel_idxs.at(0), right_speed);
+        // ugv->setCommand(wheel_idxs.at(1), left_speed);
+        // ugv->setCommand(wheel_idxs.at(2), right_speed);
+        // ugv->setCommand(wheel_idxs.at(3), left_speed);
 
-        vector<double> weg_commands;
-        for (const auto & weg_joint_name : weg_joint_names) {
-            auto y = ugv->getJoint(weg_joint_name)->getPosition(0);
-            auto dy = ugv->getJoint(weg_joint_name)->getVelocity(0);
-            auto u = weg_pd.get_output(weg_extension, y, dy);
-            weg_commands.push_back(u);
-        }
+        // vector<double> weg_commands;
+        // for (const auto & weg_joint_name : weg_joint_names) {
+        //     auto y = ugv->getJoint(weg_joint_name)->getPosition(0);
+        //     auto dy = ugv->getJoint(weg_joint_name)->getVelocity(0);
+        //     auto u = weg_pd.get_output(weg_extension, y, dy);
+        //     weg_commands.push_back(u);
+        // }
 
-        for (size_t weg_idx = 0; weg_idx < weg_idxs.size(); ++weg_idx) {
-            ugv->setCommand(weg_idxs.at(weg_idx), weg_commands.at(weg_idx));
-        }
+        // for (size_t weg_idx = 0; weg_idx < weg_idxs.size(); ++weg_idx) {
+        //     ugv->setCommand(weg_idxs.at(weg_idx), weg_commands.at(weg_idx));
+        // }
 
 
-#ifdef VISUALIZE
-        if (world->getTime() > next_vis_output_time) {
-            add_frame_to_rl(rl, world, VIS_SCALE);
-            if (update_target) {
-                rl.add_to_frame("target",
-                    targets[target_idx].x() * VIS_SCALE,
-                    targets[target_idx].y() * VIS_SCALE,
-                    targets[target_idx].z() * VIS_SCALE,
-                    0, 0, 0, 1);
-                update_target = false;
-            }
-            next_vis_output_time += VIS_STEP;
-        }
-#endif
+// #ifdef VISUALIZE
+//         if (world->getTime() > next_vis_output_time) {
+//             add_frame_to_rl(rl, world, VIS_SCALE);
+//             if (update_target) {
+//                 rl.add_to_frame("target",
+//                     targets[target_idx].x() * VIS_SCALE,
+//                     targets[target_idx].y() * VIS_SCALE,
+//                     targets[target_idx].z() * VIS_SCALE,
+//                     0, 0, 0, 1);
+//                 update_target = false;
+//             }
+//             next_vis_output_time += VIS_STEP;
+//         }
+// #endif
 
     // }
+
+
+
+
 
     // zero target_dist if all 4 targets have been reached
     target_dist = target_idx >= targets.size() ? 0 : target_dist;
 
 #ifdef VISUALIZE
-    rl.log_data_["duration"] = (rl.log_data_["frames"].size() - 1) * VIS_STEP;
+    // rl.log_data_["duration"] = (rl.log_data_["frames"].size() - 1) * VIS_STEP;
     // Passing false prints a compact JSON representation
-    cout << rl.to_string(false) << endl;
+    // cout << rl.to_string(false) << endl;
 
     cerr << "Targets reached : " << target_idx << endl;
     cerr << "Dist to next    : " << target_dist << endl;
@@ -670,5 +674,5 @@ using std::max;
          << "," << std::max(0.0, TIME_STOP - world->getTime()) << endl;
 #endif
 
-    return EXIT_SUCCESS;
+    // return EXIT_SUCCESS;
 // }

@@ -30,7 +30,7 @@ function compile () {
         BIN_NAME=$BIN_DIR/$2
     else
         DEF="-D$3"
-        BIN_NAME=$BIN_DIR/$2_vis
+        BIN_NAME=$BIN_DIR/vis_$2
     fi
     erun "$COMPILER" "$CPP_FLAGS" "$LD_FLAGS" "$INC_DIRS" "$LIB_DIRS" "$LIBS" "$1"/"$2".cpp -o "$BIN_NAME" "$DEF"
 }
