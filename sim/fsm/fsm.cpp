@@ -13,7 +13,8 @@ using std::istringstream;
 int main(int argc, char const* argv[])
 {
   constexpr double TIME_STEP = 0.005;
-  constexpr double TIME_STOP = 60.0;
+  constexpr long TIME_STEP_MS = TIME_STEP * 1000;
+  constexpr double TIME_STOP_MS = 60 * 1000;
 
   // Simulation parameters
   if (argc < 7) {
@@ -65,13 +66,12 @@ int main(int argc, char const* argv[])
              friction_coeff);
 
   // When to print ANN training data
-  constexpr double DATA_STEP = 0.1;
-  double next_data_update_time = 0.0;
+  constexpr long DATA_STEP_MS = 100;
+  long next_data_update_time = DATA_STEP_MS;
 
   // When to update control parameters
-  const double CONTROL_STEP = 0.1;
-  double next_control_update_time = 0.0;
-  // constexpr double MAX_ABS_RADS = 15;
+  const long CONTROL_STEP_MS = 100;
+  long next_control_update_time = 0;
 
   double dist = 50_cm;
   vector<Vector3d> targets{
@@ -100,16 +100,23 @@ int main(int argc, char const* argv[])
   double right_speed = 0;
   double strut_extension = wheel_radius * strut_extension_percent;
 
-  cerr << "time,x,y,z,target_dist,target_angle,left_speed,right_speed,strut\n"
-          "0,0,0,0," << dist << ",0,0,0,0\n";
+  // cerr << "time,x,y,z,target_dist,target_angle,left_speed,right_speed,strut\n"
+  //         "0,0,0,0," << dist << ",0,0,0,0\n";
 
-  while (adabot.world->getTime() < TIME_STOP + TIME_STEP / 10.0) {
+  cerr << "time,dx,dz,left,right,strut\n"
+          "0,0,0,0,0,0\n";
+
+  long time_ms = 0;
+  double x = 0.0;
+  double z = 0.0;
+
+  while (time_ms <= TIME_STOP_MS) {
 
     //
     // Update Adabot control parameters
     //
-    if (adabot.world->getTime() >= next_control_update_time) {
-      next_control_update_time += CONTROL_STEP;
+    if (next_control_update_time <= time_ms) {
+      next_control_update_time += CONTROL_STEP_MS;
 
       // Get angle and distance to target
       auto chassis_transform = adabot.chassis->getTransform();
@@ -127,7 +134,7 @@ int main(int argc, char const* argv[])
       target_dist = (chassis_pos - targets[target_idx]).norm();
 
       // Update target if necessary
-      if (target_dist < 5_cm) {
+      if (target_dist < 10_cm) {
         if (++target_idx >= targets.size()) {
           target_idx = 0;
           strut_extension *= 0.5;
@@ -156,26 +163,35 @@ int main(int argc, char const* argv[])
 
 
     adabot.step();
+    time_ms += TIME_STEP_MS;
 
 
     //
     // Output ANN training data
     //
-    if (adabot.world->getTime() >= next_data_update_time) {
-      next_data_update_time += DATA_STEP;
+    if (next_data_update_time <= time_ms) {
+      next_data_update_time += DATA_STEP_MS;
 
       auto chassis_transform = adabot.chassis->getTransform();
       auto chassis_translation = chassis_transform.translation();
 
+      // cerr << "time,dx,dz,left,right,strut\n"
+
+      double new_x = chassis_translation.x();
+      double new_z = chassis_translation.z();
+
       cerr << adabot.world->getTime() << ","
-           << chassis_translation.x() << ","
-           << chassis_translation.y() << ","
-           << chassis_translation.z() << ","
-           << target_dist << ","
-           << target_angle << ","
+           << new_x - x << ","
+           // << chassis_translation.y() << ","
+           << new_z - z << ","
+           // << target_dist << ","
+           // << target_angle << ","
            << left_speed << ","
            << right_speed << ","
            << strut_extension << "\n";
+
+      x = new_x;
+      z = new_z;
     }
 
 

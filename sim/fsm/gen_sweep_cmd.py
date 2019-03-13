@@ -16,14 +16,27 @@ sweep = product(strut_count,
                 strut_extension_percent,
                 friction_coeff)
 
+total = len(strut_count) \
+      * len(fsm_deg) \
+      * len(wheel_speed) \
+      * len(turn_factor) \
+      * len(strut_extension_percent) \
+      * len(friction_coeff)
+
+i = 0
+print('#!/usr/bin/env bash\n')
+print('mkdir -p data2')
+print('echo "Starting..."')
 for sc, fd, ws, tf, se, fc in sweep:
     fname = f'{sc}-{fd}-{ws}-{tf}-{se}-{fc}'
-    vis_fname = f'fsm/fsm_vis-{fname}.json'
-    csv_fname = f'fsm/fsm_vis-{fname}.csv'
+    # vis_fname = f'fsm/fsm_vis-{fname}.json'
+    vis_fname = '/dev/null'
+    csv_fname = f'data2/fsm-{fname}.csv'
 
     args = fname.replace('-', ' ')
-    cmd = f'./bin/vis_fsm {args} 1> {vis_fname} 2> {csv_fname}'
+    cmd = f'../bin/fsm {args} 1> {vis_fname} 2> {csv_fname}'
     print(cmd)
-    break
-    # print(./bin/vis_fsm 5 5 12 1.1 0.4 0.8 1> fsm/fsm_vis.json 2> fsm/fsm_data.csv
+
+    i += 1
+    print(f'echo "Completed {i:03} of {total}"')
 
