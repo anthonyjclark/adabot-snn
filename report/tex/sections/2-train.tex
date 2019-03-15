@@ -1,0 +1,68 @@
+
+\section{Training a Simulator Neural Network}
+
+The goal of our study is to develop a SNN that is able to determine a new pose for our mobile robot based on the input control signals. To train the neural network, we first need some way to collect training data.
+
+\noindent
+\textbf{Collecting training data.}
+%
+We built a physical simulation of our mobile robot using DART~\citep{Lee.2018.JOSS.DARTDynamicAnimation}.
+%
+The simulation can be run with different values for the robot's input control signals: the speeds of the left and right wheels as well as the strut extension amount. The simulation did not include any obstacles or
+%
+We ran the simulation with 9012 different combinations of these input signals and collected the resulting change in position and heading.
+
+\noindent
+\textbf{Training the SNN.}
+
+
+
+
+noisy measurements
+uneven terrain
+
+
+
+
+
+\noindent
+\textbf{Comparing the SNN model.}
+
+running times (phys vs snn)
+7.5s
+.28
+
+
+difference between SNN and diff will be exaerbated
+
+
+One example. Others are more or less dramatic
+
+evolve then show behavior in phys vs differential drive model
+
+
+
+
+
+
+\noindent
+\textbf{Evolving a simple controller.}
+
+2 minutes vs 1 hour
+
+
+Use cases:
+(1) module onboard
+(2) evolve high-level strategy control parameters
+
+\citet{Pretorius.2014.2ICECC.ComparisonNeuralNetworks}
+more efficient (30$\times$)
+
+\noindent
+\textbf{Evolving a simple controller.}
+
+
+
+future
+- obstacles
+- uneven terrain

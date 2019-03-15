@@ -1,0 +1,1762 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fric",
+				"friction_coeff"
+			],
+			[
+				"cost",
+				"const"
+			],
+			[
+				"struc",
+				"strut_count"
+			],
+			[
+				"stru",
+				"strut_extension"
+			],
+			[
+				"struid",
+				"strut_idxs"
+			],
+			[
+				"log",
+				"log_data_"
+			],
+			[
+				"TOKEN",
+				"token"
+			],
+			[
+				"newcommand",
+				"\\newcommand{cmd}[args][default]{def}              \tlatex-document"
+			],
+			[
+				"subsec",
+				"\\subsection{}"
+			],
+			[
+				"int",
+				"Interpreter"
+			],
+			[
+				"visiedheap",
+				"visited_edge_heap"
+			],
+			[
+				"Div",
+				"Divide"
+			],
+			[
+				"revi",
+				"review_scores"
+			],
+			[
+				"d",
+				"djb2"
+			],
+			[
+				"max",
+				"max_exam_score"
+			],
+			[
+				"creat",
+				"creating"
+			],
+			[
+				"reco",
+				"recognizing"
+			],
+			[
+				"print",
+				"println\tprintln!(…)"
+			],
+			[
+				"par",
+				"parse"
+			],
+			[
+				"in",
+				"input_remaining"
+			],
+			[
+				"includ",
+				"\\includegraphics"
+			],
+			[
+				"tims",
+				"timeSteps"
+			],
+			[
+				"getObjec",
+				"getObjectByName"
+			],
+			[
+				"loop",
+				"setLoopMode"
+			],
+			[
+				"Loop",
+				"LoopOnce"
+			],
+			[
+				"defau",
+				"DEFALUT_CAMERA_LOOKAT"
+			],
+			[
+				"cachedmat",
+				"cachedMaterialI"
+			],
+			[
+				"creates",
+				"createStandardPrimitives"
+			],
+			[
+				"create",
+				"createStandardPrimitives"
+			],
+			[
+				"rad",
+				"borderRadius"
+			],
+			[
+				"animation",
+				"animationData"
+			],
+			[
+				"anim",
+				"animationAvailable"
+			],
+			[
+				"ani",
+				"animation-available"
+			],
+			[
+				"tr",
+				"try"
+			],
+			[
+				"files",
+				"files"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"vue",
+				"vue-transmit"
+			],
+			[
+				"cent",
+				"align-content"
+			],
+			[
+				"ali",
+				"align-items"
+			],
+			[
+				"defa",
+				"defaultColor"
+			],
+			[
+				"pas",
+				"onPaste"
+			],
+			[
+				"show",
+				"showSettings"
+			],
+			[
+				"al",
+				"align-items"
+			],
+			[
+				"textal",
+				"text-align"
+			],
+			[
+				"tim",
+				"totalTime"
+			],
+			[
+				"play",
+				"playback-speed"
+			],
+			[
+				"timel",
+				"timeline-slider"
+			],
+			[
+				"texal",
+				"text-align"
+			],
+			[
+				"rg",
+				"rgba()"
+			],
+			[
+				"bull",
+				"BULLET"
+			],
+			[
+				"timeste",
+				"TIME_STEP"
+			],
+			[
+				"spherehspe",
+				"sphere_shape"
+			],
+			[
+				"spa",
+				"space-between"
+			],
+			[
+				"some",
+				"some_child_struct_a"
+			],
+			[
+				"try",
+				"try\tTry/Except/Else"
+			],
+			[
+				"underga",
+				"undergraduate"
+			],
+			[
+				"sec",
+				"\\section{title}                                   \tlatex-document"
+			],
+			[
+				"while",
+				"while\twhile … { … }"
+			],
+			[
+				"the",
+				"\\theta"
+			],
+			[
+				"foot",
+				"\\footnote"
+			],
+			[
+				"newcommna",
+				"\\newcommand{cmd}[args][default]{def}              \tlatex-document"
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"pars",
+				"params"
+			],
+			[
+				"ROCK",
+				"rocky3"
+			],
+			[
+				"arp",
+				"argparser"
+			],
+			[
+				"initdur",
+				"INIT_DURATION"
+			],
+			[
+				"world",
+				"WORLD_NAME"
+			],
+			[
+				"usepa",
+				"\\usepackage{package}                              \tlatex-document"
+			],
+			[
+				"todo",
+				"\\todo{text}                                       \ttodonotes"
+			],
+			[
+				"subfl",
+				"\\subfloat[subcaption]{body}                       \tsubfig"
+			],
+			[
+				"rgb_the",
+				"rgb_thresh"
+			],
+			[
+				"ex",
+				"exam_names"
+			],
+			[
+				"examtot",
+				"exam_totals"
+			],
+			[
+				"studn",
+				"student"
+			],
+			[
+				"stud",
+				"students"
+			],
+			[
+				"Eq",
+				"EqualEqual"
+			],
+			[
+				"prin",
+				"print\tprint!(…)"
+			],
+			[
+				"un",
+				"unimplemented"
+			],
+			[
+				"hypo",
+				"hypotenuse"
+			],
+			[
+				"cmdou",
+				"cmd_out"
+			],
+			[
+				"rn",
+				"random"
+			],
+			[
+				"de",
+				"defs\tMethod"
+			],
+			[
+				"In",
+				"IntegerLiteral"
+			],
+			[
+				"strin",
+				"StringLiteral"
+			],
+			[
+				"is",
+				"is_whitespace"
+			],
+			[
+				"Sym",
+				"SymbolTable"
+			],
+			[
+				"Sy",
+				"SymbolTable"
+			],
+			[
+				"type",
+				"type\ttype … = …;"
+			],
+			[
+				"typesp",
+				"type_specifier"
+			],
+			[
+				"tpe",
+				"type_specifier"
+			],
+			[
+				"Vardec",
+				"VariableDeclaration"
+			],
+			[
+				"Assignmenstat",
+				"AssignmentStatement"
+			],
+			[
+				"Var",
+				"VariableDeclarations"
+			],
+			[
+				"types",
+				"type_specifier"
+			],
+			[
+				"Ast",
+				"AST"
+			],
+			[
+				"inter",
+				"interpret"
+			],
+			[
+				"timeout",
+				"test_timeout"
+			],
+			[
+				"inp",
+				"input_fullfiles"
+			],
+			[
+				"resfile",
+				"results_file"
+			],
+			[
+				"true",
+				"true"
+			],
+			[
+				"fn",
+				"fn\tfn …(…) { … }"
+			],
+			[
+				"charin",
+				"char_indices"
+			],
+			[
+				"numberli",
+				"number_literal"
+			],
+			[
+				"Token",
+				"TokenType"
+			],
+			[
+				"str",
+				"String"
+			],
+			[
+				"stringli",
+				"string_literal"
+			],
+			[
+				"sca",
+				"scan_string"
+			],
+			[
+				"Tokety",
+				"TokenType"
+			],
+			[
+				"tokenty",
+				"token_type"
+			],
+			[
+				"sor",
+				"sorted_counted"
+			],
+			[
+				"sort",
+				"sort_and_count_split_inversions"
+			],
+			[
+				"pr",
+				"print_array"
+			],
+			[
+				"programsc",
+				"program_score"
+			],
+			[
+				"programmes",
+				"program_message"
+			],
+			[
+				"maxsco",
+				"max_score"
+			],
+			[
+				"resul",
+				"results_file"
+			],
+			[
+				"res",
+				"results_file"
+			],
+			[
+				"program_out",
+				"program_outputs"
+			],
+			[
+				"for",
+				"for\tfor … done"
+			],
+			[
+				"auto",
+				"autograder_dir"
+			],
+			[
+				"pyt",
+				"Python"
+			],
+			[
+				"Run",
+				"Running"
+			],
+			[
+				"sub",
+				"submission_dir"
+			],
+			[
+				"recruit",
+				"recruitment"
+			],
+			[
+				"pub",
+				"publications"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				"PdfLaTeX"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/Markdown Preview/Markdown.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Markdown Preview/Markdown.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 357.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"bash",
+				"Set Syntax: Bourne Again Shell (bash)"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"synbash",
+				"Set Syntax: Bourne Again Shell (bash)"
+			],
+			[
+				"synmark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"markdo",
+				"Markdown Preview: Copy to Clipboard"
+			],
+			[
+				"pac",
+				"Package Control: List Packages"
+			],
+			[
+				"smarttit",
+				"Convert Case: Smart Title Case"
+			],
+			[
+				"theme",
+				"Boxy Theme: Activation"
+			],
+			[
+				"symarkd",
+				"Set Syntax: Markdown"
+			],
+			[
+				"smar",
+				"Convert Case: Smart Title Case"
+			],
+			[
+				"smart",
+				"Convert Case: Smart Title Case"
+			],
+			[
+				"reinde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"syntrust",
+				"Set Syntax: Rust Enhanced"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"selector",
+				"UI: Select Color Scheme"
+			],
+			[
+				"colorschemeslecto",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"syntaxtod",
+				"Set Syntax: Todo.txt"
+			],
+			[
+				"instll",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"list ",
+				"Package Control: List Packages"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"smarttitle",
+				"Convert Case: Smart Title Case"
+			],
+			[
+				"html",
+				"Markdown Preview: Export HTML in Sublime Text"
+			],
+			[
+				"unfoldall",
+				"Code Folding: Unfold All"
+			],
+			[
+				"case",
+				"Convert Case: Title Case"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"comm",
+				"Toggle Block Comment"
+			],
+			[
+				"syntjson",
+				"Set Syntax: JSON"
+			],
+			[
+				"pretty",
+				"Preferences: Pretty JSON Settings - User"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"re",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"mres",
+				"Markdown Preview: Export HTML in Sublime Text"
+			],
+			[
+				"syncup",
+				"Sync Settings: Create and Upload"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"synjson",
+				"Set Syntax: JSON"
+			],
+			[
+				"title",
+				"Convert Case: Title Case"
+			],
+			[
+				"word",
+				"LaTeXTools: Show word count"
+			],
+			[
+				"synrust",
+				"Set Syntax: Rust Enhanced"
+			],
+			[
+				"build ma",
+				"Build With: Markdown"
+			],
+			[
+				"language",
+				"LanguageTool: Next Problem"
+			],
+			[
+				"languagetool n",
+				"LanguageTool: Next Problem"
+			],
+			[
+				"jum",
+				"LaTeXTools: Jump to PDF"
+			],
+			[
+				"jump",
+				"LaTeXTools: Jump to PDF"
+			],
+			[
+				"diction",
+				"Dictionaries: Set Language"
+			],
+			[
+				"pacakgereo",
+				"Package Control: Remove Package"
+			],
+			[
+				"languagetooclear",
+				"LanguageTool: Clear Problems"
+			],
+			[
+				"langua",
+				"LanguageTool: Check Text"
+			],
+			[
+				"latextools: build",
+				"LaTeXTools: Build cache of LaTeX packages"
+			],
+			[
+				"convertta",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"viewpack",
+				"LaTeXTools: View TeX package documentation"
+			],
+			[
+				"instpack",
+				"Package Control: Install Package"
+			],
+			[
+				"packadd repo",
+				"Package Control: Add Repository"
+			],
+			[
+				"latexreset",
+				"LaTeXTools: Reset user settings to default"
+			],
+			[
+				"synmarkdo",
+				"Set Syntax: Markdown"
+			],
+			[
+				"unfold",
+				"MarkdownEditing: Unfold All Sections"
+			],
+			[
+				"fold",
+				"MarkdownEditing: Unfold All Sections"
+			],
+			[
+				"syntaperl",
+				"Set Syntax: ModernPerl"
+			],
+			[
+				"reindn",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"resour",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"resou",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"packlist",
+				"Package Control: List Packages"
+			],
+			[
+				"syntaxrust",
+				"Set Syntax: Rust"
+			],
+			[
+				"open",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"build",
+				"Build: Cancel"
+			],
+			[
+				"titl",
+				"Convert Case: Title Case"
+			],
+			[
+				"removepack",
+				"Package Control: Remove Package"
+			],
+			[
+				"print",
+				"Print to HTML: print as HTML via browser"
+			],
+			[
+				"ex",
+				"Markdown Preview: Export HTML in Sublime Text"
+			],
+			[
+				"export",
+				"Markdown Preview: Export HTML in Sublime Text"
+			],
+			[
+				"skin",
+				"Select Skin"
+			],
+			[
+				"packinsta",
+				"Package Control: Install Package"
+			],
+			[
+				"boxyth",
+				"Boxy Theme: Configuration"
+			],
+			[
+				"synttoml",
+				"Set Syntax: TOML"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 526.0
+	},
+	"console":
+	{
+		"height": 417.0,
+		"history":
+		[
+			"path",
+			"echo $PATH"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/report/tex"
+	],
+	"file_history":
+	[
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/tmp.py",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/sweep/job_list.txt",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/sweep/sweep_data.csv",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/sweep/sweep_vis.json",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/README.md",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/ugv.hpp",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/fsm/gen_job_list.py",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/fsm/data4/f1.0/fsm-3-8-4-0.5-0.5-1.0.csv",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/build",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/fsm/fsm.cpp",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/fsm/fsm_vis.json",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/fsm/run_fsm_sweep.sh",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/fsm/view_trajectories.sh",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/fsm/gen_sweep_cmd.py",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/fsm/job_list.txt",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/extras/utilities.hpp",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/piplot.py",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/fsm/fsm_data.csv",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/run_fsm_sweep.sh",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/tmp.txt",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/demo/demo.cpp",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/logger-cpp/src/logger.hpp",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/demo/demo_vis.json",
+		"/Users/ajc/Documents/projects/adabot/adabot03-snn/sim/bin/demo",
+		"/Users/ajc/OneDrive - Missouri State University/courses/csc325/_past/2017-3-fall/exams/exam1/mergesort3.py",
+		"/Users/ajc/tmp.txt",
+		"/Users/ajc/Documents/presentations/2018-09-27_IEEE/summary.md",
+		"/Users/ajc/OneDrive - Missouri State University/courses/csc333/_past/2017-1-spring/assignments/a6-lang-recognizer/students/bagby/lang.rs",
+		"/Users/ajc/.config/omf/init.fish",
+		"/Users/ajc/.config/fish/config.fish",
+		"/Users/ajc/Documents/projects/adabot/adabot02-ann/paper/Source/paper.tex",
+		"/Users/ajc/Documents/projects/adabot/adabot02-ann/paper/Source/acm-bottom.tex",
+		"/Users/ajc/Documents/projects/adabot/adabot02-ann/paper/Source/paper.bbl",
+		"/Users/ajc/Documents/projects/adabot/adabot02-ann/paper/Source/abstract.tex",
+		"/Users/ajc/Documents/projects/adabot/adabot02-ann/paper/authors.txt",
+		"/Users/ajc/Documents/projects/adabot/adabot02-ann/paper/generate-preamble.php",
+		"/Users/ajc/Documents/projects/adabot/adabot02-ann/paper/sections/_0-abstract.tex",
+		"/Users/ajc/Documents/projects/adabot/adabot02-ann/paper/todo.txt",
+		"/Users/ajc/Documents/projects/adabot/adabot02-ann/paper/sections/_1-introduction.tex",
+		"/Users/ajc/Documents/projects/adabot/adabot02-ann/paper/main.tex",
+		"/Users/ajc/Documents/projects/adabot/adabot02-ann/paper/alife2018.sublime-workspace",
+		"/Users/ajc/Dropbox/todo/todo.txt",
+		"/Users/ajc/Desktop/sw.md",
+		"/Users/ajc/OneDrive - Missouri State University/courses/csc333/programs/waiig/src/makefile",
+		"/Users/ajc/Desktop/projects.md",
+		"/Users/ajc/Desktop/sw 2.md",
+		"/Users/ajc/OneDrive - Missouri State University/research/students/bagby, ryan/data/avg/test_data-2.csv",
+		"/Users/ajc/OneDrive - Missouri State University/research/students/bagby, ryan/data/avg/test_data-3.csv",
+		"/Users/ajc/OneDrive - Missouri State University/research/students/bagby, ryan/data/avg/test_data-0.csv",
+		"/Users/ajc/OneDrive - Missouri State University/research/students/bagby, ryan/data/avg/test_data-1.csv",
+		"/Users/ajc/Desktop/pso/pso.py",
+		"/Users/ajc/Desktop/pso/pso.rb",
+		"/Users/ajc/Desktop/pso.py",
+		"/Users/ajc/Desktop/mm-survey/mm-survey.md",
+		"/Users/ajc/Desktop/333-prep.md",
+		"/Users/ajc/Desktop/review.md",
+		"/Users/ajc/OneDrive - Missouri State University/advising/old-courses.md",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/main.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_b-summary.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-5-mode-perception.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-4-platform.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-8-broader-impacts.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-7-education.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-1-overview.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-6-mode-optimization.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/NSF.cls",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/goals.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-3-goals-and-timeline.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/goal-table.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-description.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/generated_files/main.log",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_i-resources.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/references.bib",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-2-intellectual-merit.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_j-data.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/department-head-letter.md",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_h-support.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_g-budget.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_f-bio.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/old/_d-0-introduction.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/_d-3-platform.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-2-goals-and-timeline.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-3-mode-perception.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-4-mode-optimization.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/goals.md",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-5-education.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-6-broader-impacts.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-1-overview-and-intellectual-merit.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-0-overview-and-intellectual-merit.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-5-broader-impacts.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-4-education.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-1-goals-and-timeline.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-2-mode-perception.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-3-mode-optimization.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/project-summary/sections/summary.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-0-introduction.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/_d-1-platform.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/description.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/summary.tex",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/src/sections/budget.tex",
+		"/Users/ajc/Desktop/kin145/study.md",
+		"/Users/ajc/OneDrive - Missouri State University/courses/csc333/langs/langs.md",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/nvidia/proposal.md",
+		"/Volumes/anthonyclark/cv/index.html",
+		"/Users/ajc/Sites/personal-spike-test/views/arcs-lab/index.html",
+		"/Users/ajc/Sites/personal-spike-test/views/arcs-lab/_arcs-members.md",
+		"/Users/ajc/Sites/personal-spike-test/views/_about.md",
+		"/Users/ajc/Sites/personal-spike-test/views/cv/_section.html",
+		"/Users/ajc/Sites/personal-spike-test/views/cv/index.html",
+		"/Users/ajc/Library/Application Support/Sublime Text 3/Packages/LaTeXTools/LaTeXTools.sublime-settings",
+		"/Users/ajc/Library/Application Support/Sublime Text 3/Packages/LaTeXTools/LaTeXTools (Advanced).sublime-settings",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/project-summary/references.bib",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/project-summary/project-summary.sublime-project",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/project-summary/generated_files/main.log",
+		"/Users/ajc/OneDrive - Missouri State University/research/external-grants/career/project-summary/NSF.cls",
+		"/Users/ajc/Downloads/pericles_1467865935.bib",
+		"/Users/ajc/OneDrive - Missouri State University/courses/csc325/assignments/a8-jump-it-2d (grad students only)/code/jumpit2d.py",
+		"/Users/ajc/OneDrive - Missouri State University/courses/csc325/assignments/a8-jump-it-2d (grad students only)/code/jumpit2d-and-path.py",
+		"/Users/ajc/OneDrive - Missouri State University/courses/csc325/assignments/a8-jump-it-2d (grad students only)/submissions/meyer/jumpit2d.py",
+		"/Users/ajc/OneDrive - Missouri State University/courses/csc333/grades/calc_grades.py",
+		"/Users/ajc/OneDrive - Missouri State University/courses/csc325/grades/calc_grades.py",
+		"/Users/ajc/OneDrive - Missouri State University/courses/csc333/exams/exam2/part1/submissions/greer.rs",
+		"/Users/ajc/OneDrive - Missouri State University/courses/csc790/projects/peer-evals/ijames, garren.md",
+		"/Users/ajc/OneDrive - Missouri State University/courses/csc790/projects/peer-evals/hall, nathan.md",
+		"/private/var/folders/hc/v0z5634s7lv693bwm2fg3kgc0000gn/T/com.microsoft.Outlook/Outlook Temp/main[2].rs",
+		"/Users/ajc/OneDrive - Missouri State University/courses/csc333/assignments/a5-recognizer/students/recognizer_skeleton Lee Joosung.rs",
+		"/Users/ajc/OneDrive - Missouri State University/courses/csc790/projects/peer-evals/hall, jared.md",
+		"/Users/ajc/OneDrive - Missouri State University/courses/csc790/projects/peer-evals/cissell, keith.md"
+	],
+	"find":
+	{
+		"height": 44.0
+	},
+	"find_in_files":
+	{
+		"height": 120.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 148.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.languagetool":
+	{
+		"height": 94.0
+	},
+	"output.latextools":
+	{
+		"height": 447.0
+	},
+	"output.markdown":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "report.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"job",
+				"sweep/job_list.txt"
+			],
+			[
+				"swwvis",
+				"sweep/sweep_vis.json"
+			],
+			[
+				"swwepda",
+				"sweep/sweep_data.csv"
+			],
+			[
+				"jobli",
+				"sweep/job_list.txt"
+			],
+			[
+				"pipl",
+				"piplot.py"
+			],
+			[
+				"genjob",
+				"sweep/gen_job_list.py"
+			],
+			[
+				"hpp",
+				"ugv.hpp"
+			],
+			[
+				"build",
+				"build"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"sw",
+				"sweep/sweep.cpp"
+			],
+			[
+				"json",
+				"fsm/fsm_vis.json"
+			],
+			[
+				"redme",
+				"README.md"
+			],
+			[
+				"run",
+				"fsm/run_fsm_sweep.sh"
+			],
+			[
+				"uti",
+				"extras/utilities.hpp"
+			],
+			[
+				"fsm_data.",
+				"fsm/fsm_data.csv"
+			],
+			[
+				"fsm/fsm_data.cs",
+				"fsm/fsm_data.csv"
+			],
+			[
+				"csv",
+				"fsm/fsm_data.csv"
+			],
+			[
+				"tmp",
+				"tmp.txt"
+			],
+			[
+				"tmp.tx",
+				"tmp.txt"
+			],
+			[
+				"fsm",
+				"fsm/fsm_data.csv"
+			],
+			[
+				"fsmda",
+				"fsm/fsm_data.csv"
+			],
+			[
+				"vis",
+				"fsm/fsm_vis.json"
+			],
+			[
+				"pil",
+				"piplot.py"
+			],
+			[
+				"fsmvis",
+				"fsm/fsm_vis.json"
+			],
+			[
+				"util",
+				"extras/utilities.hpp"
+			],
+			[
+				"visjson",
+				"demo/demo_vis.json"
+			],
+			[
+				"demovis",
+				"demo/demo_vis.json"
+			],
+			[
+				"buid",
+				"build"
+			],
+			[
+				"demcpp",
+				"demo/demo.cpp"
+			],
+			[
+				"demo",
+				"bin/demo"
+			],
+			[
+				"bbl",
+				"Source/paper.bbl"
+			],
+			[
+				"acm-bom",
+				"Source/acm-bottom.tex"
+			],
+			[
+				"abstrac",
+				"Source/abstract.tex"
+			],
+			[
+				"paper.tex",
+				"Source/paper.tex"
+			],
+			[
+				"main.tex",
+				"old/main.tex"
+			],
+			[
+				"au",
+				"authors.txt"
+			],
+			[
+				"abst",
+				"sections/_0-abstract.tex"
+			],
+			[
+				"make",
+				"makefile"
+			],
+			[
+				"pso",
+				"pso.py"
+			],
+			[
+				"main",
+				"main.tex"
+			],
+			[
+				"refer",
+				"references.bib"
+			],
+			[
+				"main.",
+				"main.tex"
+			],
+			[
+				"mainte",
+				"main.tex"
+			],
+			[
+				"goal",
+				"sections/goals.tex"
+			],
+			[
+				"cls",
+				"NSF.cls"
+			],
+			[
+				"broad",
+				"sections/_d-8-broader-impacts.tex"
+			],
+			[
+				"perce",
+				"sections/_d-5-mode-perception.tex"
+			],
+			[
+				"refere",
+				"references.bib"
+			],
+			[
+				"4",
+				"sections/_d-4-platform.tex"
+			],
+			[
+				"goals",
+				"sections/goals.tex"
+			],
+			[
+				"d1",
+				"sections/_d-1-overview.tex"
+			],
+			[
+				"goaltex",
+				"sections/goals.tex"
+			],
+			[
+				"resou",
+				"sections/_i-resources.tex"
+			],
+			[
+				"perc",
+				"sections/_d-5-mode-perception.tex"
+			],
+			[
+				"over",
+				"sections/_d-1-overview.tex"
+			],
+			[
+				"8",
+				"sections/_d-8-broader-impacts.tex"
+			],
+			[
+				"7",
+				"sections/_d-7-education.tex"
+			],
+			[
+				"6",
+				"sections/_d-6-mode-optimization.tex"
+			],
+			[
+				"5",
+				"sections/_d-5-mode-perception.tex"
+			],
+			[
+				"intel",
+				"sections/_d-2-intellectual-merit.tex"
+			],
+			[
+				"opti",
+				"sections/_d-6-mode-optimization.tex"
+			],
+			[
+				"mode per",
+				"sections/_d-5-mode-perception.tex"
+			],
+			[
+				"d4",
+				"sections/_d-4-platform.tex"
+			],
+			[
+				"ref",
+				"references.bib"
+			],
+			[
+				"budg",
+				"sections/_g-budget.tex"
+			],
+			[
+				"percep",
+				"sections/_d-5-mode-perception.tex"
+			],
+			[
+				"3",
+				"sections/_d-3-goals-and-timeline.tex"
+			],
+			[
+				"bib",
+				"references.bib"
+			],
+			[
+				"goalstex",
+				"sections/goals.tex"
+			],
+			[
+				"goltex",
+				"sections/goals.tex"
+			],
+			[
+				"in",
+				"sections/old/_d-0-introduction.tex"
+			],
+			[
+				"int",
+				"src/interpreter.rs"
+			],
+			[
+				"pars",
+				"src/parser.rs"
+			],
+			[
+				"scan",
+				"src/scanner.rs"
+			],
+			[
+				"main2",
+				"main2.rs"
+			],
+			[
+				"m",
+				"main.py"
+			],
+			[
+				"skel",
+				"code/parser_skeleton.rs"
+			],
+			[
+				"main.rs",
+				"code/main.rs"
+			],
+			[
+				"resu",
+				"sections/_4-results.tex"
+			],
+			[
+				"intro",
+				"sections/_1-introduction.tex"
+			],
+			[
+				"ack",
+				"sections/_acknowledgments.tex"
+			],
+			[
+				"intr",
+				"sections/_1-introduction.tex"
+			],
+			[
+				"wek1",
+				"week1-questions.md"
+			],
+			[
+				"concl",
+				"sections/7-conclusions.tex"
+			],
+			[
+				"table",
+				"sections/yale-table.tex"
+			],
+			[
+				"attta",
+				"sections/att-table.tex"
+			],
+			[
+				"att",
+				"sections/att-table.tex"
+			],
+			[
+				"atttable",
+				"sections/att-table.tex"
+			],
+			[
+				"back",
+				"sections/2-background.tex"
+			],
+			[
+				"resul",
+				"sections/5-results.tex"
+			],
+			[
+				"conf",
+				"sections/3-confidence.tex"
+			],
+			[
+				"ensem",
+				"sections/4-ensemble.tex"
+			],
+			[
+				"confid",
+				"sections/3-confidence.tex"
+			],
+			[
+				"confi",
+				"sections/3-confidence.tex"
+			],
+			[
+				"sec4",
+				"sections/4-ensemble.tex"
+			],
+			[
+				"ind",
+				"index.html"
+			],
+			[
+				"res",
+				"sections/_4-results.tex"
+			],
+			[
+				"adabot",
+				"sections/_3-adabot.tex"
+			],
+			[
+				"linearcs",
+				"animations/linear.csv"
+			],
+			[
+				"linearcpp",
+				"src/ugv_linear/ugv_linear.cpp"
+			],
+			[
+				"bnn.hpp",
+				"src/extras/bnn/bnn.hpp"
+			],
+			[
+				"evolugvfm",
+				"src/ugv_fsm/evolve_ugv_fsm.py"
+			],
+			[
+				"ugvfsmcpp",
+				"src/ugv_fsm/ugv_fsm.cpp"
+			],
+			[
+				"ugvbnn.cpp",
+				"src/ugv_bnn/ugv_bnn.cpp"
+			],
+			[
+				"ugvbnncpp",
+				"src/ugv_bnn/ugv_bnn.cpp"
+			],
+			[
+				"bnnswecpp",
+				"src/extras/bnn/bnn_sweep.cpp"
+			],
+			[
+				"starts",
+				"start_experiment.sh"
+			],
+			[
+				"animations/fsmjson",
+				"animations/fsm-0-1_best.json"
+			],
+			[
+				"animations/fsm",
+				"animations/fsm-0-1_best.csv"
+			],
+			[
+				"evolvbnnpy",
+				"src/ugv_bnn/evolve_ugv_bnn.py"
+			],
+			[
+				"sweep.cpp",
+				"src/extras/bnn/bnn_sweep.cpp"
+			],
+			[
+				"visu",
+				"src/assets/js/visualizer.js"
+			],
+			[
+				"uri",
+				"src/assets/js/URIBuffers.js"
+			],
+			[
+				"logto",
+				"src/assets/js/logToGLTF.js"
+			],
+			[
+				"log",
+				"src/assets/js/logToGLTF.js"
+			],
+			[
+				"vue",
+				"src/App.vue"
+			],
+			[
+				"cpp",
+				"src/ugv/ugv.cpp"
+			],
+			[
+				"oldvisu",
+				"_old/js/visualizer.js"
+			],
+			[
+				"stas.",
+				"src/assets/js/stats.js"
+			],
+			[
+				"colorpick",
+				"src/components/ColorPicker.vue"
+			],
+			[
+				"drop",
+				"src/components/Dropzone.vue"
+			],
+			[
+				"color",
+				"src/components/ColorPicker.vue"
+			],
+			[
+				"colorp",
+				"src/components/ColorPicker.vue"
+			],
+			[
+				"ex1",
+				"static/example1.json"
+			],
+			[
+				"colorpic",
+				"src/components/ColorPicker.vue"
+			],
+			[
+				"ex2",
+				"static/example2.json"
+			],
+			[
+				"colo",
+				"src/components/ColorPicker.vue"
+			],
+			[
+				"dropz",
+				"src/components/Dropzone.vue"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 357.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 414.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 198.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

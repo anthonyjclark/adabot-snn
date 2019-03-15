@@ -2,6 +2,10 @@
 #ifndef UGV_UTILITIES_HPP
 #define UGV_UTILITIES_HPP
 
+// Get sign of number
+template <typename T> int sgn(T val) {
+    return (T(0) < val) - (val < T(0));
+}
 
 // Centimers conversion from SI units
 constexpr long double operator"" _cm (long double centimeters) {

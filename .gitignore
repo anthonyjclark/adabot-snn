@@ -69,3 +69,4 @@ Temporary Items
 bin/
 *.json
 *.csv
+generated_files/

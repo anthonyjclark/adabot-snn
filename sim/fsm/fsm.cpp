@@ -65,13 +65,9 @@ int main(int argc, char const* argv[])
              TIME_STEP,
              friction_coeff);
 
-  // When to print ANN training data
-  constexpr long DATA_STEP_MS = 100;
-  long next_data_update_time = DATA_STEP_MS;
-
-  // When to update control parameters
-  const long CONTROL_STEP_MS = 100;
-  long next_control_update_time = 0;
+  // Update control and simulate before measuring change
+  constexpr long UPDATE_STEP_MS = 100;
+  long next_update_time_ms = 0;
 
   double dist = 50_cm;
   vector<Vector3d> targets{
@@ -100,38 +96,93 @@ int main(int argc, char const* argv[])
   double right_speed = 0;
   double strut_extension = wheel_radius * strut_extension_percent;
 
-  // cerr << "time,x,y,z,target_dist,target_angle,left_speed,right_speed,strut\n"
-  //         "0,0,0,0," << dist << ",0,0,0,0\n";
 
-  cerr << "time,dx,dz,left,right,strut\n"
-          "0,0,0,0,0,0\n";
+  // Direction controller
+  struct State {
+    std::string name;
+    double left_speed, right_speed;
+    double to_left_lo, to_left_hi;
+    double to_right_lo, to_right_hi;
+    double to_forward_lo, to_forward_hi;
+
+    std::string transition(double angle) {
+      if (to_left_lo < angle && angle < to_left_hi) {
+        return "left";
+      } else if (to_right_lo < angle && angle < to_right_hi) {
+        return "right";
+      } else if (to_forward_lo < angle && angle < to_forward_hi) {
+        return "forward";
+      } else {
+        return name;
+      }
+    }
+  };
+
+      // // Navigate to target
+      // if (-fsm_rad < target_angle && target_angle < fsm_rad) {
+      //   left_speed = -wheel_speed;
+      //   right_speed = -wheel_speed;
+      // } else if (target_angle < -fsm_rad) {
+      //   left_speed = -wheel_speed * turn_factor;
+      //   right_speed = wheel_speed;
+      // } else {
+      //   left_speed = wheel_speed;
+      //   right_speed = -wheel_speed * turn_factor;
+      // }
+
+  double rad_factor = 1.0;
+
+  std::unordered_map<std::string, State> fsm{{
+    {"forward", {"forward",
+      -wheel_speed, -wheel_speed,
+      -2_pi, -fsm_rad,
+      fsm_rad, 2_pi,
+      1, -1
+    }},
+    {"left",    {"left",
+      -wheel_speed * turn_factor, wheel_speed,
+      1, -1,
+      1, -1,
+      -fsm_rad/rad_factor, 2_pi
+    }},
+    {"right",   {"right",
+      wheel_speed, -wheel_speed * turn_factor,
+      1, -1,
+      1, -1,
+      -2_pi, fsm_rad/rad_factor
+    }}
+  }};
+
+  std::string cstate("forward");
+
+
+  cerr << "time,dlon,dlat,dyaw,left,right,strut,pleft,pright,pstrut,x,z\n";
 
   long time_ms = 0;
-  double x = 0.0;
-  double z = 0.0;
 
-  while (time_ms <= TIME_STOP_MS) {
+  while (time_ms < TIME_STOP_MS) {
+
+    auto chassis_transform = adabot.chassis->getTransform();
+    auto yaw = chassis_transform.rotation().eulerAngles(2, 0, 2).y();
+    auto pos = chassis_transform.translation();
+
+    double pleft = left_speed;
+    double pright = right_speed;
+    double pstrut = strut_extension;
 
     //
     // Update Adabot control parameters
     //
-    if (next_control_update_time <= time_ms) {
-      next_control_update_time += CONTROL_STEP_MS;
-
+    {
       // Get angle and distance to target
-      auto chassis_transform = adabot.chassis->getTransform();
-
-      auto chassis_yaw = chassis_transform.rotation().eulerAngles(2, 0, 2).y();
-      auto chassis_pos = chassis_transform.translation();
-
-      auto local_to_global = AngleAxisd(chassis_yaw, Vector3d(0, 1, 0));
+      auto local_to_global = AngleAxisd(yaw, Vector3d(0, 1, 0));
 
       auto Va = local_to_global * Vector3d(1, 0, 0);
-      auto Vb = targets[target_idx] - chassis_pos;
+      auto Vb = targets[target_idx] - pos;
       auto Vn = Vector3d(0, 1, 0);
 
       target_angle = std::atan2(Va.cross(Vb).dot(Vn), Va.dot(Vb));
-      target_dist = (chassis_pos - targets[target_idx]).norm();
+      target_dist = (pos - targets[target_idx]).norm();
 
       // Update target if necessary
       if (target_dist < 10_cm) {
@@ -144,17 +195,9 @@ int main(int argc, char const* argv[])
 #endif
       }
 
-      // Navigate to target
-      if (-fsm_rad < target_angle && target_angle < fsm_rad) {
-        left_speed = -wheel_speed;
-        right_speed = -wheel_speed;
-      } else if (target_angle < -fsm_rad) {
-        left_speed = -wheel_speed * turn_factor;
-        right_speed = wheel_speed;
-      } else {
-        left_speed = wheel_speed;
-        right_speed = -wheel_speed * turn_factor;
-      }
+      cstate = fsm[cstate].transition(target_angle);
+      left_speed = fsm[cstate].left_speed;
+      right_speed = fsm[cstate].right_speed;
 
       adabot.left_speed = left_speed;
       adabot.right_speed = right_speed;
@@ -162,53 +205,75 @@ int main(int argc, char const* argv[])
     }
 
 
-    adabot.step();
-    time_ms += TIME_STEP_MS;
-
-
-    //
-    // Output ANN training data
-    //
-    if (next_data_update_time <= time_ms) {
-      next_data_update_time += DATA_STEP_MS;
-
-      auto chassis_transform = adabot.chassis->getTransform();
-      auto chassis_translation = chassis_transform.translation();
-
-      // cerr << "time,dx,dz,left,right,strut\n"
-
-      double new_x = chassis_translation.x();
-      double new_z = chassis_translation.z();
-
-      cerr << adabot.world->getTime() << ","
-           << new_x - x << ","
-           // << chassis_translation.y() << ","
-           << new_z - z << ","
-           // << target_dist << ","
-           // << target_angle << ","
-           << left_speed << ","
-           << right_speed << ","
-           << strut_extension << "\n";
-
-      x = new_x;
-      z = new_z;
-    }
-
+    // Step forward in time and then measure changes
+    next_update_time_ms += UPDATE_STEP_MS;
+    while (time_ms < next_update_time_ms) {
+      adabot.step();
+      time_ms += TIME_STEP_MS;
 
     //
     // Update target visualization when adabot visualization is updated
     //
 #ifdef VISUALIZE
-    if (adabot.vis_updated && update_target) {
-      update_target = false;
-      adabot.vis_updated = false;
-      adabot.logger.add_to_frame("target",
-                                 targets[target_idx].x() * adabot.VIS_SCALE,
-                                 targets[target_idx].y() * adabot.VIS_SCALE,
-                                 targets[target_idx].z() * adabot.VIS_SCALE,
-                                 0, 0, 0, 1);
-    }
+      if (adabot.vis_updated && update_target) {
+        update_target = false;
+        adabot.vis_updated = false;
+        adabot.logger.add_to_frame("target",
+                                   targets[target_idx].x() * adabot.VIS_SCALE,
+                                   targets[target_idx].y() * adabot.VIS_SCALE,
+                                   targets[target_idx].z() * adabot.VIS_SCALE,
+                                   0, 0, 0, 1);
+      }
 #endif
+    }
+
+
+    //
+    // Output ANN training data
+    //
+    {
+      // Get dlon, dlat, and dyaw
+
+      auto new_chassis_transform = adabot.chassis->getTransform();
+      auto new_yaw = new_chassis_transform.rotation().eulerAngles(2, 0, 2).y();
+      auto new_pos = new_chassis_transform.translation();
+
+      double dyaw = new_yaw - yaw;
+      if (dyaw > 1_pi) {
+        dyaw -= 2_pi;
+      } else if (dyaw < -1_pi) {
+        dyaw += 2_pi;
+      }
+
+      // Get angle and distance to new position
+      auto local_to_global = AngleAxisd(yaw, Vector3d(0, 1, 0));
+
+      auto Va = local_to_global * Vector3d(1, 0, 0);
+      auto Vb = new_pos - pos;
+      auto Vn = Vector3d(0, 1, 0);
+
+      double angle_to_new_pos = std::atan2(Va.cross(Vb).dot(Vn), Va.dot(Vb));
+      double dist_traveled = (pos - new_pos).norm();
+
+      double dlon = dist_traveled * cos(angle_to_new_pos);
+      double dlat = dist_traveled * sin(angle_to_new_pos);
+
+      // cerr << "time,dlon,dlat,dyaw,left,right,strut,pleft,pright,pstrut,x,z\n";
+      cerr << adabot.world->getTime() << ","
+           << dlon << ","
+           << dlat << ","
+           << dyaw << ","
+           << left_speed << ","
+           << right_speed << ","
+           << strut_extension << ","
+           << pleft << ","
+           << pright << ","
+           << pstrut
+           << "," << new_pos.x() << "," << new_pos.z()
+           << "\n";
+
+      yaw = new_yaw;
+    }
 
   }
   adabot.log(cout);

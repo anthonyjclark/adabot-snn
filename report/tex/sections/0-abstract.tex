@@ -1,0 +1,11 @@
+\begin{abstract}
+% Abstract length should not exceed 250 words
+% Background
+It is difficult to model kinematics of a legged-wheel robot. Complex interactions between their irregularly-shaped wheels and the ground make it difficult to derive an accurate mathematical model. Yet, for many applications it is vital to have such a model. For example, to predict the current velocity of the robot.
+% Methods
+We propose using a neural network to model the kinematics of a transformable wheel mobile robot. We use a physical simulation of our robot to generate training data. The training data is then used to optimize a neural network that can predict changes to the robot's pose based its current control commands.
+% Results
+The neural network simulation is better able to predict the location of the physically simulated mobile robot when compared to a differential drive model. Using the trained network, we next evolved a simple controller to navigate a series of way-points. The evolved control parameters were then transferred to the simulated robot where nearly identical behaviors were observed.
+% Conclusions
+Our results show that a simulator neural network can be effective in prediction the movement of a transformable wheel mobile robot.
+\end{abstract}

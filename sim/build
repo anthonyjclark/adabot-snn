@@ -25,13 +25,12 @@ function erun () {
 
 
 function compile () {
-    if [ -z "$3" ]; then
-        DEF=""
-        BIN_NAME=$BIN_DIR/$2
-    else
-        DEF="-D$3"
-        BIN_NAME=$BIN_DIR/vis_$2
-    fi
+    DEF=""
+    BIN_NAME=$BIN_DIR/$2
+    erun "$COMPILER" "$CPP_FLAGS" "$LD_FLAGS" "$INC_DIRS" "$LIB_DIRS" "$LIBS" "$1"/"$2".cpp -o "$BIN_NAME" "$DEF"
+
+    DEF="-DVISUALIZE"
+    BIN_NAME=$BIN_DIR/vis_$2
     erun "$COMPILER" "$CPP_FLAGS" "$LD_FLAGS" "$INC_DIRS" "$LIB_DIRS" "$LIBS" "$1"/"$2".cpp -o "$BIN_NAME" "$DEF"
 }
 
@@ -55,7 +54,7 @@ case "$1" in
         ;;
 
     build )
-        build "${2%/}" "$3"
+        build "${2%/}"
         ;;
 
     * )

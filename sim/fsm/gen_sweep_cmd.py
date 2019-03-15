@@ -23,20 +23,49 @@ total = len(strut_count) \
       * len(strut_extension_percent) \
       * len(friction_coeff)
 
-i = 0
+
 print('#!/usr/bin/env bash\n')
-print('mkdir -p data2')
-print('echo "Starting..."')
-for sc, fd, ws, tf, se, fc in sweep:
+
+data_dir = 'data4'
+
+# Create friction dirs
+for fc in friction_coeff:
+    print('mkdir -p', f'{data_dir}/f{fc}')
+print()
+
+# Create array of jobs
+print('jobs=(')
+for i, (sc, fd, ws, tf, se, fc) in enumerate(sweep):
     fname = f'{sc}-{fd}-{ws}-{tf}-{se}-{fc}'
     # vis_fname = f'fsm/fsm_vis-{fname}.json'
     vis_fname = '/dev/null'
-    csv_fname = f'data2/fsm-{fname}.csv'
+    csv_fname = f'{data_dir}/f{fc}/fsm-{fname}.csv'
 
     args = fname.replace('-', ' ')
-    cmd = f'../bin/fsm {args} 1> {vis_fname} 2> {csv_fname}'
+    cmd = f'"../bin/fsm {args} {i+1}/{total} 1> {vis_fname} 2> {csv_fname}"'
     print(cmd)
+    if i >= 9:
+        break
+print(')')
 
-    i += 1
-    print(f'echo "Completed {i:03} of {total}"')
+# Function to run experiment
+print(f'''
+run_sim () {{
+    echo "$1"
+    eval "$1"
+}}''')
 
+# Run in batches on N
+N = 4
+print(f'''
+echo "Starting..."
+
+N={N}
+(
+for job in "${{jobs[@]}}"; do
+    ((i=i%N)); ((i++==0)) && wait
+    run_sim "$job" &
+done
+)
+
+echo "Done."''')

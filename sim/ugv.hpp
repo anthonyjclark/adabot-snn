@@ -277,7 +277,7 @@ public:
     , wheel_thickness(wheel_thickness)
     , strut_count(strut_count)
     , strut_radius(strut_radius)
-    , strut_pd(1, 0.1, time_step)
+    , strut_pd(0.5, 0.05, time_step)
   {
 
     world->setTimeStep(time_step);

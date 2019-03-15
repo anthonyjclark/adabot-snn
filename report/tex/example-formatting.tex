@@ -1,0 +1,48 @@
+\url{http://theurlyouwanttoinsert}
+
+\citep{BTW87,BTW88}
+\citep[the Avida Artificial Life system][]{AB1,OBA}
+\citet{BUR90,BUR93}
+
+${\cal D}$
+
+\begin{eqnarray}
+s_i=\int_0^\infty n_i(t)\, dt=\int_{T_c}^{T_e}n_i(t)\, dt\;,
+\label{size}
+\end{eqnarray}
+
+$\epsilon_{\rm best}$
+
+ $60\times60$
+
+\begin{table}[ht]
+\center{
+\begin{tabular}{|c|c|c|c|}\hline
+Name & Result & Bonus $b_i$ & Difficulty\\ \hline\hline
+Echo & I/O   & 1 & --\\
+Not  & $\neg A$ & 2 & 1 \\
+Nand & $\neg(A\wedge B)$ & 2 & 1 \\
+Not Or & $\neg A \vee B$ & 3 & 2 \\
+And  &  $ A \wedge B $   & 3 & 2 \\
+Or   &  $ A \vee B $     & 4 & 3 \\
+And Not & $A\wedge\neg B$& 4 & 3 \\
+Nor  & $\neg(A\vee B)$   & 5 & 4 \\
+Xor  & $ A\ {\rm xor}\ B$ &   6 & 4 \\
+Equals &$\neg(A\ {\rm xor}\ B)$&6& 4 \\ \hline
+\end{tabular}
+}
+\vskip 0.25cm
+\caption{Logical calculations on random inputs $A$ and $B$ rewarded,
+bonuses, and difficulty (in minimum number of {\tt nand} instructions
+required). Bonuses $b_i$ increase the speed of a CPU by a factor
+$\nu_i=1+2^{b_i-3}$.}
+\end{table}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=2.25in, angle=90]{fig3.eps}
+\caption{Distribution of genotypes sizes $P(s)$ fitted to a power law
+  (solid line) at mutation rate $R=0.004$.}
+\label{fig3}
+\end{center}
+\end{figure}
