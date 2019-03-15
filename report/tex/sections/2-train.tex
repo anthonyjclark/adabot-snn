@@ -1,68 +1,48 @@
 
 \section{Training a Simulator Neural Network}
 
-The goal of our study is to develop a SNN that is able to determine a new pose for our mobile robot based on the input control signals. To train the neural network, we first need some way to collect training data.
+The goal of our study is to develop an SNN that can determine a new pose for our mobile robot based on the input control signals. To train the neural network, we first needed to collect training data.
 
 \noindent
 \textbf{Collecting training data.}
 %
-We built a physical simulation of our mobile robot using DART~\citep{Lee.2018.JOSS.DARTDynamicAnimation}.
+We built a physical simulation of our robot using DART~\citep{Lee.2018.JOSS.DARTDynamicAnimation}.
 %
-The simulation can be run with different values for the robot's input control signals: the speeds of the left and right wheels as well as the strut extension amount. The simulation did not include any obstacles or
+We can run the simulation with different values for the robot’s input control signals: the speeds of the left and right wheels and the strut extension amount. The simulation did not include any obstacles or uneven terrain.
 %
 We ran the simulation with 9012 different combinations of these input signals and collected the resulting change in position and heading.
 
 \noindent
 \textbf{Training the SNN.}
-
-
-
-
-noisy measurements
-uneven terrain
-
-
-
-
+%
+The SNN comprises three neural networks, one for predicting the change in the longitudinal position, one for lateral position, and one for heading.
+%
+We evaluated several neural network hyper-parameter combinations (i.e., architectures, optimization algorithms, learn rates, etc.). We achieved the highest accuracy on our validation data when using a network with two hidden layers, each with 20 nodes, and the L-BFGS optimizer with an adaptive learning rate.
 
 \noindent
-\textbf{Comparing the SNN model.}
-
-running times (phys vs snn)
-7.5s
-.28
-
-
-difference between SNN and diff will be exaerbated
-
-
-One example. Others are more or less dramatic
-
-evolve then show behavior in phys vs differential drive model
-
-
-
-
-
+\textbf{Comparing the SNN model.} Figure~\ref{fig:paths} shows paths of a robot as dictated by the differential drive model, the physical simulation, and our trained neural networks.
+%
+As shown in the figure, compared to the kinematics model the SNN more closely resembles the actual path of the simulated robot.
+%
+Other example paths (using different control parameters) showed similar relative performances between the SNN and the differential drive model.
+%
+The SNN outperforms the differential drive model because it takes into account the wheel extensions and slippage.
+%
+Since the SNN takes into account these physical properties and limitations, and the real world has even more sources of noise and external influence, we expect the relative accuracy of the SNN to be even higher when these experiments are repeated with our physical device.
 
 \noindent
 \textbf{Evolving a simple controller.}
+%
+As the SNN is an accurate model of the physical simulation, we next attempted to use the SNN to optimize a simple controller for performing the way-point following task (as shown in Figure~\ref{fig:paths}).
+% 7.5 vs .28
+An advantage of using the SNN is that it is approximately 30 times faster than the physical simulation. Thus on a standard laptop, optimizing a simple finite state machine with differential evolution took only two minutes, whereas it would have taken one hour using our physical simulation.
+%
+An interactive visualization of the way-point following robot can be found at this address: \url{http://bit.ly/2ChVuqr}.
 
-2 minutes vs 1 hour
-
-
-Use cases:
-(1) module onboard
-(2) evolve high-level strategy control parameters
-
-\citet{Pretorius.2014.2ICECC.ComparisonNeuralNetworks}
-more efficient (30$\times$)
 
 \noindent
-\textbf{Evolving a simple controller.}
-
-
-
-future
-- obstacles
-- uneven terrain
+\textbf{Conclusions.} We have two goals for the SNN: (1) to act in place of a physical simulation and (2) to detect poor mobility and dictate when wheel struts should extend.
+%
+In this study, we demonstrated goal (1) by evolving the parameters of a simple controller for way-point following.
+%
+As part of our ongoing studies, we will use the trained SNN to detect poor mobility when the robot is operating in an environment with obstacles and uneven terrain, and we will perform similar experiments on our real device. All code for this study can be found in this repository: \url{https://github.com/anthonyjclark/adabot-snn/}.
