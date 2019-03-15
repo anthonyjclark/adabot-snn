@@ -1,5 +1,5 @@
 
-\section{Training a Simulator Neural Network}
+\section{Training and Testing an SNN}
 
 The goal of our study is to develop an SNN that can determine a new pose for our mobile robot based on the input control signals. To train the neural network, we first needed to collect training data.
 
@@ -15,7 +15,8 @@ We ran the simulation with 9012 different combinations of these input signals an
 \noindent
 \textbf{Training the SNN.}
 %
-The SNN comprises three neural networks, one for predicting the change in the longitudinal position, one for lateral position, and one for heading.
+% The SNN comprises three neural networks, one for predicting the change in the longitudinal position, one for lateral position, and one for heading.
+The SNN comprises three neural networks, one each for predicting changes to the robots longitudinal position, lateral position, and heading.
 %
 We evaluated several neural network hyper-parameter combinations (i.e., architectures, optimization algorithms, learn rates, etc.). We achieved the highest accuracy on our validation data when using a network with two hidden layers, each with 20 nodes, and the L-BFGS optimizer with an adaptive learning rate.
 
@@ -26,7 +27,7 @@ As shown in the figure, compared to the kinematics model the SNN more closely r
 %
 Other example paths (using different control parameters) showed similar relative performances between the SNN and the differential drive model.
 %
-The SNN outperforms the differential drive model because it takes into account the wheel extensions and slippage.
+The SNN outperforms the differential drive model because it accounts for the wheel extensions and slippage.
 %
 Since the SNN takes into account these physical properties and limitations, and the real world has even more sources of noise and external influence, we expect the relative accuracy of the SNN to be even higher when these experiments are repeated with our physical device.
 

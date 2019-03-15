@@ -1,12 +1,14 @@
+\vspace{-0.25in}
+
 \section{Introduction}
 
 Robots are frequently used in remote and unpredictable environments.
 %
 % One trouble of using robots in these environments is that they must be capable of navigating highly varied terrain.
 %
-For example, in \emph{search and rescue} robots are designed to aid first responders search for victims in hazordous and highly varied terrain~\citep{Graf.2017.2ISSCIS.RescuePathOptimization}.
+For example, in \emph{search and rescue} robots are designed to aid first responders in searching for victims in hazardous and varied terrain~\citep{Graf.2017.2ISSCIS.RescuePathOptimization}.
 %
-One solution to this problem is to use an unmanned aerial vehicle (UAV). However, UAVs can typically only operate for short periods of time (roughly 30 minutes to one hour).
+One solution to this problem is to use an unmanned aerial vehicle (UAV). However, UAVs only operate for short periods of time (typically less than one hour).
 
 More recently, lightweight mobile robots with transformable wheels have been developed for search and rescue.
 %
@@ -31,7 +33,7 @@ These devices have the benefits of normal wheels (e.g., increased stability and 
     \caption{A mobile robot with transformable wheels.}
     \label{fig:robot}
 
-    \vspace{-0.45in}
+    \vspace{-0.15in}
 
 \end{figure}
 
@@ -39,7 +41,7 @@ A drawback of using a transformable wheel mobile robot (or a legged-wheel robot)
 %
 Without an accurate model of the robot, it is difficult to determine when wheels should transform from normal wheels into legged-wheels.
 %
-Specifically, a model can calculate the \emph{expected} velocity of the robot, and we can compare this quantity to the \emph{real} velocity as measured by sensors. If these two quantities differ by some threshold amount, then the robot should infer that it is stuck or slipping (i.e., it is exhibiting poor mobility) and it should extend its wheel struts.
+Specifically, a model can calculate the \emph{expected} velocity of the robot, and we can compare this quantity to the \emph{real} velocity as measured by sensors. If these two quantities differ by a specified threshold, then the robot should infer that it is stuck or slipping (i.e., it is exhibiting poor mobility) and extend its wheel struts.
 %
 Without an accurate model of the robot kinematics, this process cannot work.
 
@@ -55,10 +57,10 @@ Without an accurate model of the robot kinematics, this process cannot work.
     \subfloat[]{%
         \includegraphics[height=1.6in]{figures/snn-path.png}%
     }
-    %\vspace{-0.05in}
-    \caption{Example paths taken by the robot (a) as predicted by the differential drive model, (b) during a physical simulation, and (c) as predicted by a trained SNN. Blue circles represent way-points that the robot is trying to reach in a pre-defined sequence. The robot moves on to its next way-point once it reaches to within 10\si{cm} of its current target way-point. Robot paths are shown in orange, and lighter shades denote earlier an earlier time in simulation (the robot starts at the origin).}
+    \vspace{-0.05in}
+    \caption{Example paths taken by the robot (a) as predicted by the differential drive model, (b) during a physical simulation, and (c) as predicted by a trained SNN. Blue circles represent way-points that the robot is trying to reach in a pre-defined sequence starting at the origin. The robot moves on to its next way-point once it is within 10\si{cm} of its current. Robot paths are shown in orange, and lighter shades denote an earlier time in simulation.}
     \label{fig:paths}
-    %\vspace{-0.15in}
+    \vspace{-0.2in}
 \end{figure*}
 
 \noindent
@@ -68,6 +70,8 @@ In prior work, we use a differential drive model to calculate \emph{expected} ve
 %
 The model did not account for strut extension, wheel slippage (i.e., differing friction properties of different terrains), uneven ground, or that the wheels might rotate at a different rate than commanded.
 %
-In this study, we develop a simulator neural network (SNN) similar to that described by \citet{Pretorius.2014.2ICECC.ComparisonNeuralNetworks}, where they train a neural network so that control signals map to changes the pose of the robot.
+In this study, we develop a simulator neural network (SNN) similar to that described by \citet{Pretorius.2014.2ICECC.ComparisonNeuralNetworks}, where a neural network is trained to map control signals to the pose of a robot.
 %
 The goal of this study is to produce an accurate model of our mobile robot. The model will have two uses: (1) to act in place of a physical simulation for optimizing control parameters and (2) to determine when the robot exhibits poor mobility and should extend struts.
+
+\vspace{-0.1in}
